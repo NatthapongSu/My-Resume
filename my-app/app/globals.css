@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@layer components {
+  .sidebar-icon{
+    @apply relative flex items-center justify-center 
+    h-12 w-12 mt-5 mb-5 mx-auto shadow-lg
+    bg-amber-400 text-gray-600 
+    hover:bg-gray-600 hover:text-amber-400 
+    rounded-3xl hover:rounded-2xl
+    transition-all duration-300 ease-linear cursor-pointer
+  
+  }
+
+  .sidebar-tooltip{
+    @apply absolute w-auto p-2 m-2 min-w-max left-16 text-amber-50 text-lg
+    scale-0 bg-gray-800 rounded-xl
+  }
+
+  .header-text {
+    @apply text-5xl mt-7 mb-4
+  }
+
+  .n-text {
+    @apply text-2xl
+  }
+
+}
+
+/* ::-webkit-scrollbar {
+ width: 100px;
+
+} */
+
+:root {
+  background-color: rgb(15, 15, 15);
+  color: aliceblue;
+}
