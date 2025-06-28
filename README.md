@@ -21,6 +21,10 @@ It showcases my profile, skills, work experience, and education in a modern, res
 ✅ Optimized with the latest Next.js & Tailwind features
 
 ---
+
+## 🛠 Demo (WIP)
+
+
 <!-- 
 ## 🚀 Getting Started
 
