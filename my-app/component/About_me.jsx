@@ -6,9 +6,9 @@ import { TypeAnimation } from 'react-type-animation';
 function About_me() {
     return (
         <div className='pt-7'>
-            <div className='flex justify-center'>
-                <div className='w-[250px] h-[250px] border-amber-300 border rounded-full overflow-hidden'>
-                    <img className='w-full h-full object-cover' src="/profile.png" alt="image-profile" />
+            <div className='flex justify-center max-md:flex-col'>
+                <div className='w-[250px] h-[250px] border-amber-300 border rounded-full overflow-hidden max-md:m-auto'>
+                    <img className='w-full h-full object-cover' src="/s_profile.jpg" alt="image-profile" />
                 </div>
 
                 <div className='ml-5'>
@@ -19,32 +19,39 @@ function About_me() {
                         Web App/Website Fullstack Developer
                     </div>
                     <hr className='my-5' />
-                    <div className='flex'>
-                        <div className='text-2xl' >Email</div>
-                        <AiOutlineMail className='mx-2' size={30} />
-                        <div className='text-2xl'>:</div>
+
+                    <div className='flex max-md:flex-col max-md:mb-2'>
+                        <div className='flex'>
+                            <div className='text-2xl' >Email</div>
+                            <AiOutlineMail className='mx-2' size={30} />
+                            <div className='text-2xl'>:</div>
+                        </div>
                         <div className='text-2xl ml-2' >natthapong.su7@gmail.com</div>
                     </div>
 
-                    <div className='flex'>
-                        <div className='text-2xl' >Phone</div>
-                        <AiOutlinePhone className='mx-2' size={30} />
-                        <div className='text-2xl'>:</div>
+                    <div className='flex max-md:flex-col max-md:mb-2'>
+                        <div className='flex'>
+                            <div className='text-2xl' >Phone</div>
+                            <AiOutlinePhone className='mx-2' size={30} />
+                            <div className='text-2xl'>:</div>
+                        </div>
                         <div className='text-2xl ml-2' >0969479270</div>
                     </div>
 
                     <div className='flex'>
-                        <div className='text-2xl' >Github</div>
-                        <AiOutlineGithub className='mx-2' size={30} />
-                        <div className='text-2xl'>:</div>
-                        <a href='#' className='text-2xl ml-2 underline hover:text-amber-400' >NatthapongSu</a>
+                        <div className='flex'>
+                            <div className='text-2xl' >Github</div>
+                            <AiOutlineGithub className='mx-2' size={30} />
+                            <div className='text-2xl'>:</div>
+                        </div>
+                        <a href='#' className='text-2xl ml-2 underline text-amber-400' >NatthapongSu</a>
                     </div>
 
                 </div>
 
             </div>
 
-            <div className='mx-30'>
+            <div className='session-box'>
                 {/* <div>
                     <TypeAnimation
                         sequence={[

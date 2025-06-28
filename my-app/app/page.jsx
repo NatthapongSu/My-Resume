@@ -25,8 +25,9 @@ function Page() {
 
       />
       <div className='w-screen h-screen overflow-y-auto scroll-smooth'>
-        <section className='relative bg-[url("/flat-lay-desk-arrangement-with-copy-space.jpg")] bg-cover bg-center' ref={aboutRef}>
-          <div className="absolute inset-0 bg-black opacity-85 z-10"></div>
+        <section ref={aboutRef}>
+        {/* <section className='relative bg-[url("/flat-lay-desk-arrangement-with-copy-space.jpg")] bg-cover bg-center' ref={aboutRef}></section> */}
+          {/* <div className="absolute inset-0 bg-black opacity-85 z-10"></div> */}
           <div className='relative z-20'>
             <About_me />
           </div>

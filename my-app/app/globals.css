@@ -13,7 +13,7 @@
 
   .sidebar-tooltip{
     @apply absolute w-auto p-2 m-2 min-w-max left-16 text-amber-50 text-lg
-    scale-0 bg-gray-800 rounded-xl
+    scale-0 bg-gray-800 rounded-xl z-100
   }
 
   .header-text {
@@ -21,7 +21,11 @@
   }
 
   .n-text {
-    @apply text-2xl
+    @apply text-2xl bg-gray-800 rounded-2xl p-5 max-md:p-4
+  }
+
+  .session-box{
+    @apply mx-25 max-md:mx-10 max-sm:mx-7 max-lg:mx-10
   }
 
 }
