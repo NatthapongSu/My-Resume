@@ -13,15 +13,6 @@ It showcases my profile, skills, work experience, and education in a modern, res
 
 ---
 
-## ✨ Features
-
-✅ Responsive design (mobile & desktop)  
-✅ Interactive sidebar navigation  
-✅ Smooth scrolling to sections  
-✅ Optimized with the latest Next.js & Tailwind features
-
----
-
 ## 🛠 Demo (WIP)
 
 
