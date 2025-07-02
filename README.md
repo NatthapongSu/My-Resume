@@ -13,9 +13,9 @@ It showcases my profile, skills, work experience, and education in a modern, res
 
 ---
 
-## 🛠 Demo (WIP)
+## 🛠 Demo
 
-
+[🔗 View my website](https://my-resume-1imzggldr-abedzkizanes-projects.vercel.app/)
 <!-- 
 ## 🚀 Getting Started
 
