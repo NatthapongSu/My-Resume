@@ -4,57 +4,50 @@ function Technical_skill() {
 
   const items = [
     {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQ4MH3vLA6l72ULn3Up_6undPBcXoERMFcA&s",
       name: "JavaScript"
     },{
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQ4MH3vLA6l72ULn3Up_6undPBcXoERMFcA&s",
-      name: "JavaScript"
+      name: "HTML / CSS"
     },{
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQ4MH3vLA6l72ULn3Up_6undPBcXoERMFcA&s",
-      name: "JavaScript"
+      name: "Basic database knowledge (SQL, relational databases)"
     },{
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQ4MH3vLA6l72ULn3Up_6undPBcXoERMFcA&s",
-      name: "JavaScript"
+      name: "C++"
     },{
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQ4MH3vLA6l72ULn3Up_6undPBcXoERMFcA&s",
-      name: "JavaScript"
+      name: "GraphQL (Hasura)"
     },{
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQ4MH3vLA6l72ULn3Up_6undPBcXoERMFcA&s",
-      name: "JavaScript"
+      name: "React"
     },{
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQ4MH3vLA6l72ULn3Up_6undPBcXoERMFcA&s",
-      name: "JavaScript"
+      name: "Next.js"
     },{
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQ4MH3vLA6l72ULn3Up_6undPBcXoERMFcA&s",
-      name: "JavaScript"
+      name: "Node.js"
     },{
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQ4MH3vLA6l72ULn3Up_6undPBcXoERMFcA&s",
-      name: "JavaScript"
+      name: "Express.js"
+    },{
+      name: "SvelteKit"
+    },{
+      name: "Strapi"
+    },{
+      name: "Git (version control)"
     }
   ]
 
   return (
     <div className='session-box'>
 
-      <div className='header-text'>Technical_skill</div>
+      <div className='header-text'>Technical skills</div>
 
-      <div className='flex gap-7 mt-5 p-5 bg-gray-800 rounded-2xl flex-wrap max-md:gap-1'>
+      <div className='flex gap-6.5 mt-5 p-5 bg-gray-800 rounded-2xl flex-wrap max-md:gap-4.5'>
         {items.map((item, index) => (
-          <Item key={index} img={item.img} name={item.name} />
+          <Item key={index} name={item.name} />
         ))}
       </div>
     </div>
   )
 }
 
-function Item({ name, img }) {
+function Item({ name }) {
   return (
-    <div className='flex-col flex justify-center items-center'>
-      <div className='w-30 max-md:w-17'>
-        <img src={img} alt="JavaScript_img" className='rounded-2xl' />
-      </div>
-
-      <div className='n-text'>
+    <div className='flex justify-center items-center'>
+      <div className='border-2 text-2xl px-5 py-1 rounded-4xl text-amber-300'>
         {name}
       </div>
     </div>

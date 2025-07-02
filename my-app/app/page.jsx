@@ -1,15 +1,54 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Sidebar from '@/component/Sidebar'
 import About_me from '@/component/About_me'
 import Language from '@/component/Language';
 import Technical_skill from '@/component/Technical_skill';
+import Work from '@/component/Work';
+import Education from '@/component/Education';
 
 function Page() {
   const aboutRef = useRef(null);
   const languagesRef = useRef(null);
   const technicalRef = useRef(null);
+  const workRef = useRef(null);
+  const educationRef = useRef(null);
+
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fadeIn');
+          observer.unobserve(entry.target); // fade in only once
+        }
+      });
+    }, {
+      threshold: 0.05,
+    });
+
+    if (languagesRef.current) {
+      observer.observe(languagesRef.current);
+    }
+    if (technicalRef.current) {
+      observer.observe(technicalRef.current);
+    }
+    if (workRef.current) {
+      observer.observe(workRef.current);
+    }
+    if (educationRef.current) {
+      observer.observe(educationRef.current);
+    }
+
+    return () => {
+      if (languagesRef.current) observer.unobserve(languagesRef.current);
+      if (technicalRef.current) observer.unobserve(technicalRef.current);
+      if (workRef.current) observer.unobserve(workRef.current);
+      if (educationRef.current) observer.unobserve(educationRef.current);
+
+    };
+  }, []);
 
 
   const scrollToSection = (ref) => {
@@ -17,29 +56,37 @@ function Page() {
   };
 
   return (
-    <div className='flex'>
-      <Sidebar
+    <div className='md:flex'>
+      {/* <Sidebar
         onScrollToAbout={() => scrollToSection(aboutRef)}
         onScrollToLanguage={() => scrollToSection(languagesRef)}
         onScrollToTechnical={() => scrollToSection(technicalRef)}
+        onScrollToWork={() => scrollToSection(workRef)}
 
-      />
+      /> */}
+      <div className='main'></div>
+
       <div className='w-screen h-screen overflow-y-auto scroll-smooth'>
         <section ref={aboutRef}>
-        {/* <section className='relative bg-[url("/flat-lay-desk-arrangement-with-copy-space.jpg")] bg-cover bg-center' ref={aboutRef}></section> */}
-          {/* <div className="absolute inset-0 bg-black opacity-85 z-10"></div> */}
-          <div className='relative z-20'>
-            <About_me />
-          </div>
+          <About_me />
         </section>
 
-        <section ref={technicalRef}>
-          <Technical_skill/>
+        <section ref={technicalRef} className='opacity-0'>
+          <Technical_skill />
         </section>
 
-        <section ref={languagesRef}>
+        <section ref={languagesRef} className='opacity-0'>
           <Language />
         </section>
+
+        <section ref={workRef} className='opacity-0'>
+          <Work />
+        </section>
+
+        <section ref={educationRef} className='mb-3 opacity-0'>
+          <Education />
+        </section>
+
       </div>
     </div>
   );

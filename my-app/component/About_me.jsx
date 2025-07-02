@@ -1,11 +1,57 @@
-'use client'
-import React from 'react'
+
+import React, { useEffect, useRef } from 'react'
 import { AiOutlineMail, AiOutlinePhone, AiOutlineGithub } from "react-icons/ai";
 import { TypeAnimation } from 'react-type-animation';
+import { MdContentCopy } from "react-icons/md";
+import { ToastContainer, toast } from 'react-toastify';
+import copy from 'clipboard-copy';
+import { IoIosPin } from "react-icons/io";
+
 
 function About_me() {
+
+    function copyText(text) {
+        copy(text)
+        toast.success('Copy Success!', {
+            position: "top-center",
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+        });
+    }
+
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-fadeIn');
+              observer.unobserve(entry.target); // fade in only once
+            }
+          });
+        }, {
+          threshold: 0.02,
+        });
+    
+        if (ref.current) {
+          observer.observe(ref.current);
+        }
+    
+        return () => {
+          if (ref.current) observer.unobserve(ref.current);
+    
+        };
+      }, []);
+
+
     return (
         <div className='pt-7'>
+            <ToastContainer />
             <div className='flex justify-center max-md:flex-col'>
                 <div className='w-[250px] h-[250px] border-amber-300 border rounded-full overflow-hidden max-md:m-auto'>
                     <img className='w-full h-full object-cover' src="/s_profile.jpg" alt="image-profile" />
@@ -26,7 +72,19 @@ function About_me() {
                             <AiOutlineMail className='mx-2' size={30} />
                             <div className='text-2xl'>:</div>
                         </div>
-                        <div className='text-2xl ml-2' >natthapong.su7@gmail.com</div>
+                        <div className='flex cursor-pointer' onClick={() => copyText('natthapong.su7@gmail.com')}>
+                            <div className='text-2xl ml-2 mr-1 underline text-amber-400' >natthapong.su7@gmail.com</div>
+                            <MdContentCopy size={20} className='text-amber-400' />
+                        </div>
+                    </div>
+
+                    <div className='flex max-md:flex-col max-md:mb-2'>
+                        <div className='flex'>
+                            <div className='text-2xl' >Address</div>
+                            <IoIosPin className='mx-2' size={30} />
+                            <div className='text-2xl'>:</div>
+                        </div>
+                        <div className='text-2xl ml-2' >130/59 ,Ban Suan, Chon Buri District, Chon Buri 20000</div>
                     </div>
 
                     <div className='flex max-md:flex-col max-md:mb-2'>
@@ -44,14 +102,14 @@ function About_me() {
                             <AiOutlineGithub className='mx-2' size={30} />
                             <div className='text-2xl'>:</div>
                         </div>
-                        <a href='#' className='text-2xl ml-2 underline text-amber-400' >NatthapongSu</a>
+                        <a href='https://github.com/NatthapongSu' target='_blank' className='text-2xl ml-2 underline text-amber-400' >NatthapongSu</a>
                     </div>
 
                 </div>
 
             </div>
 
-            <div className='session-box'>
+            <div className='session-box opacity-0' ref={ref}>
                 {/* <div>
                     <TypeAnimation
                         sequence={[
@@ -75,7 +133,7 @@ function About_me() {
                 </div>
 
             </div>
-            <div className='h-20'></div>
+            {/* <div className='h-20'></div> */}
         </div>
     )
 }
