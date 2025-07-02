@@ -26,10 +26,11 @@ function Technical_skill() {
     },{
       name: "Strapi"
     },{
+      name: "Tailwind CSS, Bootstrap, Ant Design"
+    },{
       name: "Git (version control)"
     }
   ]
-
   return (
     <div className='session-box'>
 
